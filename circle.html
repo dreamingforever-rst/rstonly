@@ -16,7 +16,8 @@
     </header>
 
     <nav>
-        <ul>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="circle.html">サークル参加</a></li>
             <li><a href="visitor.html">一般参加</a></li>
@@ -61,6 +62,8 @@
             </table>
 
             <h3>宅配搬入について</h3>
+            <p><strong>しばし待たれよ...</strong><br>
+            <!--
             <div style="background:#f9f9f9; padding:15px; border:1px solid #ddd;">
                 <p>必ず<strong>ヤマト運輸の元払い</strong>をご利用ください。</p>
                 <strong>【期間】</strong> ◯月◯日 ～ ◯月◯日 指定<br>
@@ -70,19 +73,41 @@
                 電話番号: 090-6170-7801<br>
                 ※品名欄には「品名・サークル番号・サークル名」を記入
             </div>
-
+-->
             <h3>登録方法</h3>
-            <p>以下のリンクからPass Marketページへ移動して、登録をお願いします。</p>
+            <p>以下のリンクからLivePocketページへ移動して、登録をお願いします。</p>
             <ul>
-                <li><strong>サークル参加〆切：</strong> 2026年◯月◯3日（日）</li>
-                <li><strong>サークルカット送付〆切：</strong> 2026年◯月◯日（火）</li>
+                <li><strong>一次募集開始日：</strong> 1/25(日)</li>
+                <li><strong>一次募集終了日：</strong> 4/12(日)</li>
+            <!--    <li><strong>二次募集開始日：</strong> 4/19 (10th終了後)</li>
+                <li><strong>二次募集終了日：</strong> 5/31(日)</li>
+                <li><strong>サークルカット締切日：</strong> 5/31(日)</li>
+                -->
             </ul>
-            <a href="#" class="btn">Pass Marketで参加登録する</a>
+            <a href="https://livepocket.jp/e/sp6i6" class="btn">LivePocketで参加登録する</a>
         </section>
     </main>
 
     <footer>
         <p>© 2026 DRe:AMING FORe:VER!!準備会</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // メニュー内のリンクをクリックすると、メニューを閉じる
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
+</html>
 </html>

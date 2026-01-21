@@ -16,7 +16,8 @@
     </header>
 
     <nav>
-        <ul>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="circle.html">サークル参加</a></li>
             <li><a href="visitor.html">一般参加</a></li>
@@ -33,7 +34,7 @@
         <section>
             <h2>News</h2>
             <ul class="news-list">
-                <li><span class="date">2025.12.13</span> <span class="tag"></span> サイトをリニューアルしました。</li>
+                <li><span class="date">2026.01.25</span> <span class="tag"></span> サイトを公開しました。</li>
                 <li><span class="date">2025.12.13</span> <span class="tag"></span> 開催日が決定しました。</li>
             </ul>
         </section>
@@ -55,10 +56,12 @@
 
             <h3>Time Table</h3>
             <table class="timetable">
-                <tr><th>11:00</th><td>サークル参加者入場開始</td></tr>
+                <p><strong>しばし待たれよ...</strong><br>
+            <!-- <tr><th>11:00</th><td>サークル参加者入場開始</td></tr>
                 <tr><th>11:45</th><td>一般参加者入場待機列作成</td></tr>
                 <tr><th>12:00</th><td><strong>開場（イベント開始）</strong></td></tr>
                 <tr><th>15:00</th><td>閉会（イベント終了）</td></tr>
+            -->
             </table>
         </section>
     </main>
@@ -66,6 +69,23 @@
     <footer>
         <p>© 2026 DRe:AMING FORe:VER!!準備会</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // メニュー内のリンクをクリックすると、メニューを閉じる
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 
 </html>

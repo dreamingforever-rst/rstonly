@@ -16,7 +16,8 @@
     </header>
 
     <nav>
-        <ul>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="circle.html">サークル参加</a></li>
             <li><a href="visitor.html">一般参加</a></li>
@@ -64,13 +65,30 @@
             </ul>
 
             <h3>一般参加登録フォーム</h3>
-            <p>受付は <strong>2026年◯月◯日（水）22時～</strong> 開始いたします。</p>
-            <a href="#" class="btn">一般参加登録フォーム (PassMarket)</a>
+            <p>受付は <strong>2026年4月19日（日）22時～</strong> 開始いたします。</p>
+            <a href="#" class="btn">一般参加登録フォーム (LivePocket)</a>
         </section>
     </main>
 
     <footer>
         <p>© 2026 DRe:AMING FORe:VER!!準備会</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // メニュー内のリンクをクリックすると、メニューを閉じる
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

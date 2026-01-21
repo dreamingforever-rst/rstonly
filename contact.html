@@ -16,7 +16,8 @@
     </header>
 
     <nav>
-        <ul>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul id="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="circle.html">サークル参加</a></li>
             <li><a href="visitor.html">一般参加</a></li>
@@ -42,5 +43,22 @@
     <footer>
         <p>© 2026 DRe:AMING FORe:VER!!準備会</p>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // メニュー内のリンクをクリックすると、メニューを閉じる
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
