@@ -239,12 +239,12 @@ th {
     background-color: #ffeef4;
     color: #e91e63;
     width: 30%;
-    text-align: left;
+    text-align: center;
 }
 /* タイムテーブル用調整 */
 .timetable th {
     text-align: center;
-    width: 20%;
+    width: 30%;
 }
 
 /* 注意書きボックス */
